@@ -1,0 +1,275 @@
+:root
+{
+    --glass: rgba(0, 0, 0, 0.5);
+    --gold: rgb(110, 104, 52);
+    --green: rgb(6, 38, 9);
+    --grey:  rgb(26, 26, 26);
+    --light-gold: rgb(130, 109, 39);
+    --red: rgb(81, 0, 0);
+    --silver: rgb(206, 186, 127);        
+}
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body 
+{
+    background-color: rgb(26, 26, 26);
+    color:var(--silver);
+    font-family: Helvetica, sans-serif;
+    height: 100vh;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+}
+
+header
+{
+    background: linear-gradient(180deg, black, transparent);
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    justify-content: space-between;
+    position: fixed;
+    min-width: 100vw;
+}
+
+a
+{
+    color: var(--silver);
+    text-decoration: none;
+}
+
+h1
+{
+    color: var(--silver);
+    display: flex;
+    font-family: 'Titan One', cursive;
+    flex-direction: row;
+}
+
+h1 > span 
+{
+    color: var(--red);
+}
+
+h2
+{
+    color: var(--silver);
+    font-family: 'Fondamento', cursive;
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+h2 > span
+{
+    color: var(--red);
+    font-size: 58px;
+}
+
+header > nav > ul 
+{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+header > nav > ul > li
+{
+    color: var(--red);
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 8px 26px;
+    position: relative;
+    transition: color 0.5s;
+}
+
+header > nav > ul > li:first-child
+{
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.505), var(--red));
+    backdrop-filter: blur(1px);
+    border: none;
+    border-radius: 5px;
+    color: var(--silver);
+}
+
+nav > ul > li > ul
+{
+    display: none;
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+nav > ul >li:hover > ul
+{
+    color: var(--green);
+    display: flex;
+    flex-direction: column;
+}
+
+header > nav > ul > li:first-child:hover::after 
+{
+    width: 0%;
+}
+
+header > nav > ul > li:hover
+{
+    color: var(--silver);
+}
+
+header > nav > ul >li:hover::after 
+{
+    width: 100%;
+}
+
+header > nav > ul >li::after 
+{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--red));
+    transition: width 0.5s;
+}
+
+.wydania 
+{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.wydania > div
+{
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px var(--silver);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Fondamento', cursive;
+    font-size: 28px;
+    height: 450px;
+    justify-content: space-around;
+    margin: 110px 30px 30px 30px;
+    width: 450px;
+    z-index: -2;
+}
+
+.wydania > div > img
+{
+    height: 30%;
+    width: 30%;
+}
+
+#wyd1
+{
+    background: var(--green);
+}
+
+#wyd2
+{
+    background: var(--red);
+}
+
+#wyd3
+{
+    background: var(--silver);
+    color: var(--red);
+}
+
+.slider
+{
+    align-items: center;
+    border-top: 2px solid var(--silver);
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+.slider__img
+{
+    align-self: center;
+    display: flex;
+    margin-top: 30px;
+    width: 80vw;
+    z-index: -2;
+}
+
+.slider__ul
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 20px;
+    width: 80vw;
+}
+
+.slider__ul__li
+{
+    align-items: center;
+    background: radial-gradient(var(--red), var(--glass));
+    border: 2px solid var(--silver);
+    border-radius: 100%;
+    color: var(--silver);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Titan One', cursive;
+    font-size: 46px;
+    height: 120px;
+    justify-content: center;
+    text-align: center;    
+    width: 120px;
+    z-index: -2;
+}
+
+.slider__ul__i
+{
+    background: rgb (81, 0, 0);
+    font-size: 56px;
+    margin-bottom: 5px;
+}
+
+.slider__span
+{
+    background: linear-gradient(180deg, transparent, var(--glass));
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 1.5px;
+    padding: 20px 20vw;
+    text-align: justify;
+    width: 100vw;
+}
+
+.slider__shadow
+{
+    height: 100vh;
+    position: fixed;
+    width: 20vw;
+    z-index: -1;
+}
+
+.slider__shadow--left
+{
+    background: linear-gradient(90deg, black, transparent);
+    left: 0;
+}
+
+.slider__shadow--right
+{
+    background: linear-gradient(90deg,transparent, black);
+    right: 0;
+}
+

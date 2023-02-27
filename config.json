@@ -1,0 +1,70 @@
+{
+  "name": "icon",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "9dd9e835aebe1060ba7190ad2b2ed951",
+      "css": "search",
+      "code": 59392,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "9daa1fdf0838118518a7e22715e83abc",
+      "css": "file-pdf",
+      "code": 61889,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "8a6c569e59c69e9de113978b11c057b8",
+      "css": "play-circle2",
+      "code": 59393,
+      "src": "iconic"
+    },
+    {
+      "uid": "653750436fc99eeb29ccd487e6a5bfa6",
+      "css": "school",
+      "code": 59444,
+      "src": "maki"
+    },
+    {
+      "uid": "1821ddf00a08cef133824b1a4fd4790e",
+      "css": "down-dir",
+      "code": 59394,
+      "src": "websymbols"
+    },
+    {
+      "uid": "35674c31693db324f2fd6a48f1079263",
+      "css": "down-micro",
+      "code": 59395,
+      "src": "websymbols"
+    },
+    {
+      "uid": "c23a66951b34ed7d449688d559afb213",
+      "css": "video",
+      "code": 59396,
+      "src": "websymbols"
+    },
+    {
+      "uid": "8b9e6a8dd8f67f7c003ed8e7e5ee0857",
+      "css": "off",
+      "code": 59397,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "715e1003368da5e5c41ae35190af68a1",
+      "css": "right-open",
+      "code": 59392,
+      "src": "websymbols"
+    },
+    {
+      "uid": "04960bf02134620e6c61bac8d6569502",
+      "css": "left-open",
+      "code": 59393,
+      "src": "websymbols"
+    }
+  ]
+}

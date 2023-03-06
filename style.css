@@ -162,7 +162,7 @@ header
 
 /*---------------------ARTICLE--------------------*/
 
-.wydania 
+.release 
 {
     align-items: center;
     display: flex;
@@ -173,7 +173,7 @@ header
     min-width: 100vw;
 }
 
-.wydania > div
+.release__cover
 {
     align-items: center;
     border-radius: 5px;
@@ -189,23 +189,23 @@ header
     z-index: -2;
 }
 
-.wydania > div > img
+.release__cover-image
 {
     height: 30%;
     width: 30%;
 }
 
-#wyd1
+.release__cover--green
 {
     background: var(--green);
 }
 
-#wyd2
+.release__cover--red
 {
     background: var(--red);
 }
 
-#wyd3
+.release__cover--gold
 {
     background: var(--silver);
     color: var(--red);

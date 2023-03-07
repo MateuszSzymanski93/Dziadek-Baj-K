@@ -33,7 +33,7 @@ SZAFA_MINI.addEventListener("click", function()
 const TOM_MINI  = document.querySelector(".tales__read--tom");
 TOM_MINI.addEventListener("click", function()
 {
-    popupMini("tom")
+    popupMini("Tom")
 });
 
 const BAŁWAN_MINI = document.querySelector(".tales__read--balwan");
@@ -58,7 +58,7 @@ function popupMini(name)
     {
         numberOfPages = 8;
     }
-    else if(miniTitle == "tom")
+    else if(miniTitle == "Tom")
     {
         numberOfPages = 7;
     }

@@ -262,11 +262,16 @@ header
         backdrop-filter: blur(2px);
         background: var(--glass);
         flex-direction: column;
-        min-height: 100vh;
+        height: 100vh;
+        overflow-y: auto;
         position: fixed;
         transform: translateX(100%);
-        width: 50vw;
         transition: all 1s ease-in-out;
+        width: 50vw;
+    }
+    .navi__sliding-li
+    {
+        overflow: visible;
     }
     .navi__list-item
     {
@@ -455,6 +460,7 @@ h2 > span
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 
 .popup__shadow

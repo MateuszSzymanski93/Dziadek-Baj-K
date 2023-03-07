@@ -2,9 +2,9 @@
 jQuery(function($)
 {
     $.scrollTo(0);
-    $('#link-szafa').click(function() { $.scrollTo($('#slider-szafa'), 800); })
-    $('#link-tom').click(function() { $.scrollTo($('#slider-tom'), 900); })
-    $('#link-bałwan').click(function(){$.scrollTo($('#slider-bałwan'), 1000); });
+    $('.navi__sliding-li--szafa').click(function() { $.scrollTo($('#slider-szafa'), 800); })
+    $('.navi__sliding-li--tom').click(function() { $.scrollTo($('#slider-tom'), 900); })
+    $('.navi__sliding-li--balwan').click(function(){$.scrollTo($('#slider-bałwan'), 1000); });
 });
 // -----------------------------------------------------------------------------CLOSE POPUP VER. MINI
 const POPUP = document.querySelector(".popup");

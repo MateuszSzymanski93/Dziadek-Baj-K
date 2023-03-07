@@ -269,10 +269,6 @@ header
         transition: all 1s ease-in-out;
         width: 50vw;
     }
-    .navi__sliding-li
-    {
-        overflow: visible;
-    }
     .navi__list-item
     {
         font-size: 3em;

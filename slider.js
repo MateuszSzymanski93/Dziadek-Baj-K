@@ -69,7 +69,7 @@ function popupMini(name)
 }
 
 // -----------------------------------------------------------------------------NEXT PAGE
-const NEXT_MINI = document.getElementById("popup_mini_arrow_right");
+const NEXT_MINI = document.querySelector(".popup__arrow--right");
 NEXT_MINI.addEventListener("click", function()
 {
     next(miniTitle,numberOfPages);
@@ -92,7 +92,7 @@ function next(name, pages)
 }
 
 // -----------------------------------------------------------------------------PREVIOUS PAGE
-const PREVIOUS_MINI = document.getElementById("popup_mini_arrow_left");
+const PREVIOUS_MINI = document.querySelector(".popup__arrow--leftt");
 PREVIOUS_MINI.addEventListener("click", function()
 {
     previous(miniTitle, numberOfPages)

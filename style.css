@@ -486,7 +486,6 @@ header
 .popup-img > img 
 {
     animation: fadeIn 0.3s;
-    background: white;
     border: 3vw solid var(--red);
     height: auto;
     width: 80vw;
@@ -495,6 +494,7 @@ header
 .popup__close
 {
     color: var(--red);
+    content: \2716;
     cursor: pointer;
     font-size: 60px;
     position: absolute;
@@ -514,6 +514,7 @@ header
     background: transparent;
     cursor: pointer;
     color: var(--silver);
+    font-size: 80px;
     position: absolute;
     transition: all 0.3s;
 }
@@ -526,11 +527,13 @@ header
 
 .popup__arrow--left
 {
+    content: \2B98;
     left:2%;
 }
 
 .popup__arrow--right
 {
+    content: \2B9A;
     right: 2%;
 }
 

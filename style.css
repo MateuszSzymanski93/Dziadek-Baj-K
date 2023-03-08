@@ -281,8 +281,16 @@ header
     }
     .navi__list-item
     {
-        font-size: 2em;
+        font-size: 1.5em;
     }
+}
+
+@media screen and (max-width: 800px)
+{
+    .navi__list-item
+    {
+        font-size: 2em;
+    }   
 }
 
 /*---------------------COVERS--------------------*/

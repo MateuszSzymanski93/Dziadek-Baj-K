@@ -504,12 +504,17 @@ header
     color: var(--red);
     content: icon "✖";
     cursor: pointer;
-    font-size: 80px;
+    font-size: 64px;
     position: absolute;
     right: 3%;
     top: 1%;
     transform: rotateZ(45deg);
     transition: all 0.3s;
+}
+
+.popup__close::after
+{
+    content: "\271A";
 }
 
 .popup__close:hover
@@ -537,12 +542,41 @@ header
 .popup__arrow--left
 {
     left:2%;
-    transform: rotateY(180deg);
+}
+
+.popup__arrow--left::after
+{
+    content: "\2B98";
 }
 
 .popup__arrow--right
 {
     right: 2%;
+}
+
+.popup__arrow--right::after
+{
+    content: "\2B9A";
+}
+
+@media screen and (max-width: 1024px)
+{
+    .popup__close
+    {
+        transform: none;
+    }
+    .popup__close::after
+    {
+        content: "X";
+    }
+    .popup__arrow--left::after
+    {
+        content: "<";
+    }
+    .popup__arrow--right::after
+    {
+    content: ">";
+    }
 }
 
 .hidden

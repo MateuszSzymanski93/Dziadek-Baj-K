@@ -92,7 +92,7 @@ function next(name, pages)
 }
 
 // -----------------------------------------------------------------------------PREVIOUS PAGE
-const PREVIOUS_MINI = document.querySelector(".popup__arrow--leftt");
+const PREVIOUS_MINI = document.querySelector(".popup__arrow--left");
 PREVIOUS_MINI.addEventListener("click", function()
 {
     previous(miniTitle, numberOfPages)

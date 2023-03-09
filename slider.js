@@ -2,11 +2,11 @@
 jQuery(function($)
 {
     $.scrollTo(0);
-    $('.navi__sliding-li--szafa').click(function() { $.scrollTo($('#slider-szafa'), 800); })
-    $('.navi__sliding-li--tom').click(function() { $.scrollTo($('#slider-tom'), 900); })
-    $('.navi__sliding-li--balwan').click(function(){$.scrollTo($('#slider-bałwan'), 1000); });
+    $('.navi__sliding-li--szafa').click(function() { $.scrollTo($('#tales-szafa'), 800); })
+    $('.navi__sliding-li--tom').click(function() { $.scrollTo($('#tales-tom'), 900); })
+    $('.navi__sliding-li--balwan').click(function(){$.scrollTo($('#tales-bałwan'), 1000); });
 });
-// -----------------------------------------------------------------------------CLOSE POPUP VER. MINI
+// -----------------------------------------------------------------------------CLOSE POPUP 
 const POPUP = document.querySelector(".popup");
 const POPUP_CLOSE = document.querySelector(".popup__close");
 
@@ -22,21 +22,21 @@ POPUP_CLOSE.addEventListener("click", () =>
     POPUP.classList.add("hidden");
 });
 
-// -----------------------------------------------------------------------------OPEN POPUP VER. MINI
-const SZAFA_MINI = document.getElementById("szafa-mini");
+// -----------------------------------------------------------------------------OPEN POPUP 
+const SZAFA_MINI = document.querySelector(".tales__read--szafa");
 SZAFA_MINI.addEventListener("click", function()
 {
     popupMini("szafa")
 
 });
 
-const TOM_MINI  = document.getElementById("tom-mini");
+const TOM_MINI  = document.querySelector(".tales__read--tom");
 TOM_MINI.addEventListener("click", function()
 {
-    popupMini("tom")
+    popupMini("Tom")
 });
 
-const BAŁWAN_MINI = document.getElementById("bałwan-mini");
+const BAŁWAN_MINI = document.querySelector(".tales__read--balwan");
 BAŁWAN_MINI.addEventListener("click", function()
 {
     popupMini("Bałwan")
@@ -58,7 +58,7 @@ function popupMini(name)
     {
         numberOfPages = 8;
     }
-    else if(miniTitle == "tom")
+    else if(miniTitle == "Tom")
     {
         numberOfPages = 7;
     }
@@ -68,8 +68,8 @@ function popupMini(name)
     }    
 }
 
-// -----------------------------------------------------------------------------NEXT PAGE VER. MINI
-const NEXT_MINI = document.getElementById("popup_mini_arrow_right");
+// -----------------------------------------------------------------------------NEXT PAGE
+const NEXT_MINI = document.querySelector(".popup__arrow--right");
 NEXT_MINI.addEventListener("click", function()
 {
     next(miniTitle,numberOfPages);
@@ -91,8 +91,8 @@ function next(name, pages)
     document.getElementById("mini-img").innerHTML = plik;
 }
 
-// -----------------------------------------------------------------------------PREVIOUS PAGE VER. MINI
-const PREVIOUS_MINI = document.getElementById("popup_mini_arrow_left");
+// -----------------------------------------------------------------------------PREVIOUS PAGE
+const PREVIOUS_MINI = document.querySelector(".popup__arrow--left");
 PREVIOUS_MINI.addEventListener("click", function()
 {
     previous(miniTitle, numberOfPages)
@@ -111,15 +111,4 @@ function previous(name, pages)
     let plik = `<img src=\"img/${name}/${name}mini${numer}.jpg\">`;
 
     document.getElementById("mini-img").innerHTML = plik;
-}
-
-// -----------------------------------------------------------------------------READ STORY DESCRIPTION
-function balwanek__opis()
-{
-    document.getElementById("balwanek-opis").classList.remove("hidden");
-}
-
-function balwanek__opis__close()
-{
-    document.getElementById("balwanek-opis").classList.add("hidden");
 }

@@ -59,11 +59,11 @@ header
 {
     background: linear-gradient(180deg, black, transparent);
     display: flex;
-    flex-direction: row;
     height: 100px;
     justify-content: space-between;
     position: fixed;
     min-width: 100vw;
+    z-index: 1;
 }
 
 .logo
@@ -71,6 +71,7 @@ header
     color: var(--silver);
     display: flex;
     font-family: 'Titan One', cursive;
+    font-size: 3.5em;
 }
 
 .logo__part 
@@ -83,7 +84,9 @@ header
 .navi__list 
 {
     display: flex;
+    font-size: 1.5rem;
     list-style-type: none;
+    z-index: 1;
 }
 
 .navi__list-item
@@ -168,6 +171,12 @@ header
     transform: scale(1.15);
 }
 
+.navi__link
+{
+    color: inherit;
+    text-decoration: none;
+}
+
 /*---------------------NAV BAR HAMBURGER MENU--------------------*/
 
 .navi__hamburger-menu
@@ -193,6 +202,7 @@ header
 {
     background: var(--green);
     border-radius: 9999px;
+    box-shadow: 0 0 4px 1px var(--silver);
     content: "";
     height: var(--bar-height);
     width: var(--bar-width);
@@ -271,8 +281,16 @@ header
     }
     .navi__list-item
     {
-        font-size: 3em;
+        font-size: 1.5em;
     }
+}
+
+@media screen and (max-width: 800px)
+{
+    .navi__list-item
+    {
+        font-size: 2em;
+    }   
 }
 
 /*---------------------COVERS--------------------*/
@@ -325,17 +343,6 @@ header
     color: var(--red);
 }
 
-.slider
-{
-    align-items: center;
-    border-top: 2px solid var(--silver);
-    display: flex;
-    flex-flow: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100vw;
-}
-
 @media screen and (max-width: 1024px)
 {
     .release
@@ -359,7 +366,20 @@ header
 
 /*---------------------FAIRY TALES--------------------*/
 
-h2
+.tales
+{
+    align-items: center;
+    border-top: 2px solid var(--silver);
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    font-size: 24px;
+    justify-content: space-between;
+    position: relative;
+    width: 100vw;
+}
+
+.tales__title
 {
     color: var(--silver);
     font-family: 'Fondamento', cursive;
@@ -367,81 +387,70 @@ h2
     margin-top: 20px;
 }
 
-h2 > span
+.tales__ornament
 {
     color: var(--red);
     font-size: 58px;
 }
 
-.slider__img
+.tales__img
 {
     align-self: center;
     background: var(--red);
     display: flex;
-    margin-top: 30px;
+    margin: 30px 0;
     padding: 4vw 5vw;
     width: 80vw;
     z-index: -2;
 }
 
-.slider__ul
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    list-style-type: none;
-    margin: 20px;
-    width: 80vw;
-}
-
-.slider__ul__a__li
+.tales__read
 {
     align-items: center;
-    background: radial-gradient(var(--red), var(--glass));
-    border: 2px solid var(--silver);
+    background: radial-gradient(var(--green), black);
+    border: 4px solid var(--silver);
     border-radius: 100%;
     box-shadow: 0px 0px 10px var(--red);
     color: var(--silver);
     display: flex;
-    flex-direction: column;
     font-family: 'Titan One', cursive;
-    font-size: 42px;
-    height: 120px;
+    font-size: 1.7em;
+    height: 12vw;
     justify-content: center;
-    text-align: center;    
-    width: 120px;
-    transition: all 1s;
-    z-index: -2;
+    position: absolute;
+    text-align: center;
+    transition: all 1s;    
+    width: 12vw;
+    bottom: 5%;
+    right: 10%;
 }
 
-.slider__ul__a__li:hover
+.tales__read:hover
 {
-    background: radial-gradient(var(--green), var(--glass));
     box-shadow: 0px 0px 10px var(--silver);
     cursor: pointer;
-    font-size: 56px;
+    font-size: 2em;
     transform: scale(1.1);
 }
 
-.slider__ul__i
+@media screen and (max-width: 1024px)
 {
-    background: rgb (81, 0, 0);
-    font-size: 56px;
-    margin-bottom: 5px;
+    .tales__title
+    {
+        font-size: 52px;
+    }
+    .tales__img
+    {
+        width: 92vw;
+    }
+    .tales__read
+    {
+        bottom: 4%;
+        right: 4%;
+    }
 }
 
-.slider__span
-{
-    align-items: center;
-    background: linear-gradient(180deg, transparent, var(--glass));
-    display: flex;
-    flex-direction: column;
-    font-family: 'Abril Fatface', cursive;
-    letter-spacing: 1.5px;
-    padding: 20px 20vw;
-    text-align: justify;
-    width: 100vw;
-}
+/*---------------------POPUP--------------------*/
 
 .popup
 {
@@ -456,7 +465,7 @@ h2 > span
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 3;
 }
 
 .popup__shadow
@@ -492,21 +501,28 @@ h2 > span
 .popup-img > img 
 {
     animation: fadeIn 0.3s;
-    background: white;
     border: 3vw solid var(--red);
     height: auto;
+    image-rendering: smooth;
     width: 80vw;
 }
 
 .popup__close
 {
     color: var(--red);
+    content: icon "✖";
     cursor: pointer;
-    font-size: 60px;
+    font-size: 64px;
     position: absolute;
     right: 3%;
     top: 1%;
+    transform: rotateZ(45deg);
     transition: all 0.3s;
+}
+
+.popup__close::after
+{
+    content: "\271A";
 }
 
 .popup__close:hover
@@ -520,6 +536,7 @@ h2 > span
     background: transparent;
     cursor: pointer;
     color: var(--silver);
+    font-size: 80px;
     position: absolute;
     transition: all 0.3s;
 }
@@ -535,9 +552,39 @@ h2 > span
     left:2%;
 }
 
+.popup__arrow--left::after
+{
+    content: "\2B98";
+}
+
 .popup__arrow--right
 {
     right: 2%;
+}
+
+.popup__arrow--right::after
+{
+    content: "\2B9A";
+}
+
+@media screen and (max-width: 1024px)
+{
+    .popup__close
+    {
+        transform: none;
+    }
+    .popup__close::after
+    {
+        content: "X";
+    }
+    .popup__arrow--left::after
+    {
+        content: "<";
+    }
+    .popup__arrow--right::after
+    {
+    content: ">";
+    }
 }
 
 .hidden

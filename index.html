@@ -62,7 +62,11 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="navi__list-item">BLOG</li>
+                    <li class="navi__list-item">
+                        <a href="https://dziadekbajka.wordpress.com/" target="_blank" class="navi__link">
+                            BLOG
+                        </a>
+                    </li>
                     <li class="navi__list-item">AUTOR</li>
                     <li class="navi__list-item">OFERTA</li>
                     <li class="navi__list-item">KONTAKT</li>
@@ -87,44 +91,25 @@
                     <p>Dziadek Wilk</p>
                 </div> 
             </article>
-            <article class="slider">
-                <h2><span>,,B</span>ajka o Smoku z szafy"</h2>
-                <img src="img/szafa/szafamini0.jpg" alt="" class="slider__img" id="slider-szafa">
-                <ul class="slider__ul">
-                    <a class="slider__ul__a" id="szafa-mini"><li class="slider__ul__a__li">MINI</li></a>
-                    <a class="slider__ul__a"><li class="slider__ul__a__li">FULL</li></a><a class="slider__ul__a"><li class="slider__ul__a__li">MP3</li></a><a class="slider__ul__a"><li class="slider__ul__a__li">OPIS</li></a>
-                </ul>
-                <span class="slider__span">Kliknij w przycisk "MINI" aby przeczytać wersję skróconą dla najmłodszych. Przycisk "Full" otworzy pełną wersję bajki. Pod przyciskiem "MP3" wkrótce pojawi się wersja audio do słuchania. Kliknij "Opis" aby dowiedzieć się więcej o bajce.</span>                
+            <article class="tales">
+                <h2 class="tales__title"><span class="tales__ornament">,,B</span>ajka o Smoku z szafy"</h2>
+                <img src="img/szafa/szafamini0.jpg" alt="" class="tales__img" id="tales-szafa">
+                <button class="tales__read tales__read--szafa">CZYTAJ</button>
             </article>
-            <article class="slider">
-                <h2><span>,,B</span>ajka o Ślimaku Tomie"</h2>
-                <img src="img/Tom/Tommini0.jpg" alt="" class="slider__img" id="slider-tom">
-                <ul class="slider__ul">
-                    <a class="slider__ul__a" id="tom-mini"><li class="slider__ul__a__li">MINI</li></a>
-                    <a class="slider__ul__a"><li class="slider__ul__a__li">FULL</li></a><a class="slider__ul__a"><li class="slider__ul__a__li">MP3</li></a><a class="slider__ul__a"><li class="slider__ul__a__li">OPIS</li></a>
-                </ul>
-                <span class="slider__span">Kliknij w przycisk "MINI" aby przeczytać wersję skróconą dla najmłodszych. Przycisk "Full" otworzy pełną wersję bajki. Pod przyciskiem "MP3" wkrótce pojawi się wersja audio do słuchania. Kliknij "Opis" aby dowiedzieć się więcej o bajce.</span>                
+            <article class="tales">
+                <h2 class="tales__title"><span class="tales__ornament">,,B</span>ajka o Ślimaku Tomie"</h2>
+                <img src="img/Tom/Tommini0.jpg" alt="" class="tales__img" id="tales-tom">
+                <button class="tales__read tales__read--tom">CZYTAJ</button>
             </article>
-            <article class="slider">
-                <h2><span>,,B</span>ajka o lepieniu bałwana"</h2>
-                <img src="img/Bałwan/Bałwanmini0.jpg" alt="" class="slider__img" id="slider-bałwan">
-                <ul class="slider__ul">
-                    <a class="slider__ul__a" id="bałwan-mini"><li class="slider__ul__a__li">MINI</li></a>
-                    <a class="slider__ul__a"><li class="slider__ul__a__li">FULL</li></a>
-                    <a class="slider__ul__a"><li class="slider__ul__a__li">MP3</li></a>
-                    <a onclick="balwanek__opis()" class="slider__ul__a"><li class="slider__ul__a__li">OPIS</li></a>
-                </ul>
-                <div class="hidden slider__span" id="balwanek-opis">
-                    <button onclick="balwanek__opis__close()" class="slider__span__close">x</button>
-                    <span>
-                         Kliknij w przycisk "MINI" aby przeczytać wersję skróconą dla najmłodszych. Przycisk "Full" otworzy pełną wersję bajki. Pod przyciskiem "MP3" wkrótce pojawi się wersja audio do słuchania. Kliknij "Opis" aby dowiedzieć się więcej o bajce.
-                    </span>
-                </div>
+            <article class="tales">
+                <h2 class="tales__title"><span class="tales__ornament">,,B</span>ajka o lepieniu bałwana"</h2>
+                <img src="img/Bałwan/Bałwanmini0.jpg" alt="" class="tales__img" id="tales-bałwan">
+                <button class="tales__read tales__read--balwan">CZYTAJ</button>
             </article>
             <div class="hidden popup" id="popup_mini">
-                <span aria-label="Zamknij popup" class="popup__close">&#10006;</span>
-                <span aria-label="Poprzedni slajd" class="popup__arrow popup__arrow--left" id="popup_mini_arrow_left" style="font-size: 80px;">&#11160;</span>
-                <span aria-label="Następny slajd" class="popup__arrow popup__arrow--right" id="popup_mini_arrow_right" style="font-size: 80px;">&#11162;</span>
+                <span aria-label="Zamknij popup" class="popup__close"></span>
+                <span aria-label="Poprzedni slajd" class="popup__arrow popup__arrow--left"></span>
+                <span aria-label="Następny slajd" class="popup__arrow popup__arrow--right"></span>
                 <div class="popup-img" id="mini-img"></div>
                 <div class="popup__shadow popup__shadow--left"></div>
                 <div class="popup__shadow popup__shadow--right"></div>

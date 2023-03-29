@@ -5,7 +5,8 @@
     --grey:  rgb(26, 26, 26);
     --light-green: rgb(9, 59, 14);
     --red: rgb(81, 0, 0);
-    --silver: rgb(206, 186, 127);   
+    --silver: rgb(206, 186, 127);
+    --pergam: rgb(161,146,103);
     
     --animation-timing: 400ms ease-in-out;
     --bar-height: 12px;
@@ -69,6 +70,7 @@ header
 .logo
 {
     color: var(--silver);
+    cursor: pointer;
     display: flex;
     font-family: 'Titan One', cursive;
     font-size: 3.5em;
@@ -251,7 +253,7 @@ header
     width: 0;
 }
 
-@media screen and (max-width: 1024px)
+@media (max-width: 1024px)
 {
     header
     {
@@ -285,11 +287,11 @@ header
     }
 }
 
-@media screen and (max-width: 800px)
+@media (orientation: portrait)
 {
     .navi__list-item
     {
-        font-size: 2em;
+        font-size: 2.2em;
     }   
 }
 
@@ -356,7 +358,7 @@ header
     }
 }
 
-@media screen and (max-width: 600px)
+@media screen and (orientation: portrait)
 {
     .release__cover
     {
@@ -410,7 +412,7 @@ header
     background: radial-gradient(var(--green), black);
     border: 4px solid var(--silver);
     border-radius: 100%;
-    box-shadow: 0px 0px 10px var(--red);
+    bottom: 4%;
     color: var(--silver);
     display: flex;
     font-family: 'Titan One', cursive;
@@ -418,11 +420,10 @@ header
     height: 12vw;
     justify-content: center;
     position: absolute;
+    right: 10%;
     text-align: center;
     transition: all 1s;    
     width: 12vw;
-    bottom: 5%;
-    right: 10%;
 }
 
 .tales__read:hover
@@ -587,9 +588,123 @@ header
     }
 }
 
+/*---------------------AUTHOR--------------------*/
+
+.author
+{
+    animation: fadeIn 0.3s;
+    align-items: center;
+    backdrop-filter: blur(32px);
+    background-image: url(img/authorbg.jpg);
+    background-size: cover;
+    color: var(--grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 2;
+}
+
+.author__biography
+{
+    background-color: var(--pergam);
+    border-radius: 5px;
+    box-shadow: inset 0 0 36px 16px black;
+    height: 80vh;
+    margin-top: 25px;
+    overflow-y: scroll;
+    width: 80vw;
+}
+
+.author__biography::-webkit-scrollbar
+{
+    display: none;
+}
+
+.author__name
+{
+    font-family: 'Fondamento', cursive;
+    font-size: 3.2em;
+    text-align: center;
+}
+
+.author__name-ornament
+{
+    color: var(--red);
+    font-size: 1.2em;
+}
+
+.author__content
+{
+    cursor: context-menu;
+    font-family: 'Fondamento', cursive;
+    font-size: 1.8em;
+    text-align: justify;
+    margin: 1em;
+}
+
+.author__close
+{
+    cursor: pointer;
+    color: var(--red);
+    font-size: 64px; 
+    height: 120px;
+    margin: 0;
+    transition: all 0.3s;
+    z-index: 2;
+} 
+
+.author__close:hover
+{
+    color: var(--green);
+    scale: 1.2;
+}
+
+@media (max-width: 1024px)
+{
+    .author__biography
+    {
+        width: 92vw;
+    }
+    .author__content
+    {
+        font-size: 2.2em;
+    }
+    .author__name
+    {
+        font-size: 3.6em;
+    }
+}
+@media screen and (orientation: portrait)
+{
+    .author
+    {
+        background-position: left;
+    }
+    .author__close
+    {
+        height: 200px;
+    }
+}
+
+/*---------------------GLOBAL--------------------*/
 .hidden
 {
     display: none;
+}
+
+.fade-out
+{
+    animation: fadeOut 0.8s;
+}
+
+.lock-scroll
+{
+    overflow-y: hidden;
+    width: 100%;
 }
 
 @keyframes fadeIn

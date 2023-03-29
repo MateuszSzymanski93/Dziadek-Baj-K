@@ -2,9 +2,10 @@
 jQuery(function($)
 {
     $.scrollTo(0);
-    $('.navi__sliding-li--szafa').click(function() { $.scrollTo($('#tales-szafa'), 800); })
-    $('.navi__sliding-li--tom').click(function() { $.scrollTo($('#tales-tom'), 900); })
-    $('.navi__sliding-li--balwan').click(function(){$.scrollTo($('#tales-bałwan'), 1000); });
+    $('.logo').click(function() { $.scrollTo($('.release'), 800); })
+    $('.navi__sliding-li--szafa').click(function() { $.scrollTo($('.tales__img--szafa'), 800); })
+    $('.navi__sliding-li--tom').click(function() { $.scrollTo($('.tales__img--tom'), 900); })
+    $('.navi__sliding-li--balwan').click(function(){$.scrollTo($('.tales__img--balwan'), 1000); });
 });
 // -----------------------------------------------------------------------------CLOSE POPUP 
 const POPUP = document.querySelector(".popup");
@@ -14,13 +15,22 @@ const ESCAPE = document.addEventListener("keydown", (e) =>
 {
     if (e.code === "Escape" || e.keyCode === 27)
     
-        POPUP.classList.add("hidden");
+        closePopup();
 });
 
 POPUP_CLOSE.addEventListener("click", () =>
 {
-    POPUP.classList.add("hidden");
+    closePopup();
 });
+
+function closePopup()
+{
+    POPUP.classList.add("fade-out");
+    setTimeout(() => {
+        POPUP.classList.add("hidden");
+        POPUP.classList.remove("fade-out")
+    }, "700");
+}
 
 // -----------------------------------------------------------------------------OPEN POPUP 
 const SZAFA_MINI = document.querySelector(".tales__read--szafa");
@@ -111,4 +121,41 @@ function previous(name, pages)
     let plik = `<img src=\"img/${name}/${name}mini${numer}.jpg\">`;
 
     document.getElementById("mini-img").innerHTML = plik;
+}
+
+// -----------------------------------------------------------------------------AUTHOR
+const AUTHOR = document.querySelector(".author");
+const AUTHOR_OPEN = document.querySelector(".navi__list-item--author");
+const AUTHOR_CLOSE = document.querySelector(".author__close");
+
+AUTHOR_OPEN.addEventListener("click", function ()
+{
+    openAuthor()
+});
+
+    function openAuthor()
+    {
+        AUTHOR.classList.remove("hidden")
+    }
+
+// -----------------------------------------------------------------------------CLOSE AUTHOR
+
+const ESCAPE_AUTHOR = document.addEventListener("keydown", (e) =>
+{
+    if (e.code === "Escape" || e.keyCode === 27)    
+        closeAuthor();
+});
+
+AUTHOR_CLOSE.addEventListener("click", function ()
+{
+    closeAuthor();
+});
+
+function closeAuthor()
+{
+    AUTHOR.classList.add("fade-out");
+    setTimeout(() => {
+        AUTHOR.classList.add("hidden");
+        AUTHOR.classList.remove("fade-out")
+    }, "700");
 }

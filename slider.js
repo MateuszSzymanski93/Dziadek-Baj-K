@@ -162,28 +162,34 @@ function closeAuthor()
 
 // -----------------------------------------------------------------------------TOUCHMOVE TEST
 
-const NAVI_LIST = document.querySelector(".navi__list");
-
 let startTouch 
 let endTouch 
 
-function check() {
+function show() {
+    document.getElementById("menu").checked = true;
+}
+
+function hide() {
     document.getElementById("menu").checked = false;
 }
 
-NAVI_LIST.addEventListener("touchstart", (event) => {
+addEventListener("touchstart", (event) => {
     startTouch = event.touches[0].clientX;
     return startTouch;
 });
 
-NAVI_LIST.addEventListener("touchend", (event) => {
+addEventListener("touchend", (event) => {
 
     endTouch = event.changedTouches[0].clientX;
     console.log(startTouch);
     console.log(endTouch);
     if(endTouch > (startTouch + 100))
     {
-        check();
+        hide();
+    }
+    if((startTouch > 800) && (startTouch > endTouch))
+    {
+        show();
     }
 });
 

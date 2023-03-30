@@ -12,7 +12,7 @@
     --bar-height: 12px;
     --bar-width: 80px;
     --hamburger-gap: 8px;
-    --hamburger-margin: 16px;
+    --hamburger-margin: 20px;
     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
@@ -202,9 +202,8 @@ header
 .navi__hamburger-menu::before,
 .navi__hamburger-menu input
 {
-    background: var(--green);
+    background: var(--light-green);
     border-radius: 9999px;
-    box-shadow: 0 0 4px 1px var(--silver);
     content: "";
     height: var(--bar-height);
     width: var(--bar-width);

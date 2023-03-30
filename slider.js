@@ -181,15 +181,25 @@ addEventListener("touchstart", (event) => {
 addEventListener("touchend", (event) => {
 
     endTouch = event.changedTouches[0].clientX;
-    console.log(startTouch);
-    console.log(endTouch);
-    if(endTouch > (startTouch + 100))
+    console.log("start touch X position", startTouch);
+    console.log("end touch X position", endTouch);
+    if(endTouch > (startTouch + 80))
     {
         hide();
     }
-    if((startTouch > 800) && (startTouch > endTouch))
+    if((startTouch > 920) && (startTouch > (endTouch + 100)))
     {
         show();
     }
 });
 
+/*      
+        let Ystart
+        let Yend
+
+        Ystart = event.touches[0].clientY;  
+        Yend = event.changedTouches[0].clientY; 
+         
+        console.log("start touch Y position", Ystart);
+        console.log("end touch Y position",Yend);
+*/

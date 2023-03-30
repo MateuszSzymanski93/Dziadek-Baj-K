@@ -2,9 +2,10 @@
 jQuery(function($)
 {
     $.scrollTo(0);
-    $('.navi__sliding-li--szafa').click(function() { $.scrollTo($('#tales-szafa'), 800); })
-    $('.navi__sliding-li--tom').click(function() { $.scrollTo($('#tales-tom'), 900); })
-    $('.navi__sliding-li--balwan').click(function(){$.scrollTo($('#tales-bałwan'), 1000); });
+    $('.logo').click(function() { $.scrollTo($('.release'), 800); })
+    $('.navi__sliding-li--szafa').click(function() { $.scrollTo($('.tales__img--szafa'), 800); })
+    $('.navi__sliding-li--tom').click(function() { $.scrollTo($('.tales__img--tom'), 900); })
+    $('.navi__sliding-li--balwan').click(function(){$.scrollTo($('.tales__img--balwan'), 1000); });
 });
 // -----------------------------------------------------------------------------CLOSE POPUP 
 const POPUP = document.querySelector(".popup");
@@ -14,13 +15,22 @@ const ESCAPE = document.addEventListener("keydown", (e) =>
 {
     if (e.code === "Escape" || e.keyCode === 27)
     
-        POPUP.classList.add("hidden");
+        closePopup();
 });
 
 POPUP_CLOSE.addEventListener("click", () =>
 {
-    POPUP.classList.add("hidden");
+    closePopup();
 });
+
+function closePopup()
+{
+    POPUP.classList.add("fade-out");
+    setTimeout(() => {
+        POPUP.classList.add("hidden");
+        POPUP.classList.remove("fade-out")
+    }, "700");
+}
 
 // -----------------------------------------------------------------------------OPEN POPUP 
 const SZAFA_MINI = document.querySelector(".tales__read--szafa");
@@ -112,3 +122,86 @@ function previous(name, pages)
 
     document.getElementById("mini-img").innerHTML = plik;
 }
+
+// -----------------------------------------------------------------------------AUTHOR
+const AUTHOR = document.querySelector(".author");
+const AUTHOR_OPEN = document.querySelector(".navi__list-item--author");
+const AUTHOR_CLOSE = document.querySelector(".author__close");
+
+AUTHOR_OPEN.addEventListener("click", function ()
+{
+    openAuthor()
+});
+
+function openAuthor()
+{
+    AUTHOR.classList.remove("hidden")
+    document.body.classList.add("lock-scroll")
+}
+
+// -----------------------------------------------------------------------------CLOSE AUTHOR
+
+const ESCAPE_AUTHOR = document.addEventListener("keydown", (e) =>
+{
+    if (e.code === "Escape" || e.keyCode === 27)    
+        closeAuthor();
+});
+
+AUTHOR_CLOSE.addEventListener("click", function ()
+{
+    closeAuthor();
+});
+
+function closeAuthor()
+{
+    AUTHOR.classList.add("fade-out")
+    document.body.classList.remove("lock-scroll")
+    setTimeout(() => {
+        AUTHOR.classList.add("hidden")
+        AUTHOR.classList.remove("fade-out")
+    }, "700");
+}
+
+// -----------------------------------------------------------------------------TOUCHMOVE TEST
+
+let startTouch 
+let endTouch 
+
+function show() {
+    document.getElementById("menu").checked = true;
+}
+
+function hide() {
+    document.getElementById("menu").checked = false;
+}
+
+addEventListener("touchstart", (event) => {
+    startTouch = event.touches[0].clientX;
+    return startTouch;
+});
+
+addEventListener("touchend", (event) => {
+
+    endTouch = event.changedTouches[0].clientX;
+    console.log("start touch X position", startTouch);
+    console.log("end touch X position", endTouch);
+    if(endTouch > (startTouch + 80))
+    {
+        hide();
+    }
+    if((startTouch > 920) && (startTouch > (endTouch + 100)))
+    {
+        show();
+    }
+});
+
+/*      
+        let Ystart
+        let Yend
+
+        Ystart = event.touches[0].clientY;  
+        Yend = event.changedTouches[0].clientY; 
+
+        console.log("start touch Y position", Ystart);
+        console.log("end touch Y position",Yend);
+*/

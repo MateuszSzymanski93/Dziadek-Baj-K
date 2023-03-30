@@ -202,7 +202,7 @@ header
 .navi__hamburger-menu::before,
 .navi__hamburger-menu input
 {
-    background: var(--light-green);
+    background: var(--green);
     border-radius: 9999px;
     content: "";
     height: var(--bar-height);

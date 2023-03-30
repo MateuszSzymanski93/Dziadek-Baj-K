@@ -136,6 +136,7 @@ AUTHOR_OPEN.addEventListener("click", function ()
 function openAuthor()
 {
     AUTHOR.classList.remove("hidden")
+    document.body.classList.add("lock-scroll")
 }
 
 // -----------------------------------------------------------------------------CLOSE AUTHOR
@@ -153,9 +154,10 @@ AUTHOR_CLOSE.addEventListener("click", function ()
 
 function closeAuthor()
 {
-    AUTHOR.classList.add("fade-out");
+    AUTHOR.classList.add("fade-out")
+    document.body.classList.remove("lock-scroll")
     setTimeout(() => {
-        AUTHOR.classList.add("hidden");
+        AUTHOR.classList.add("hidden")
         AUTHOR.classList.remove("fade-out")
     }, "700");
 }
@@ -199,7 +201,7 @@ addEventListener("touchend", (event) => {
 
         Ystart = event.touches[0].clientY;  
         Yend = event.changedTouches[0].clientY; 
-         
+
         console.log("start touch Y position", Ystart);
         console.log("end touch Y position",Yend);
 */

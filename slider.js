@@ -28,7 +28,7 @@ BAŁWAN_MINI.addEventListener("click", function()
 });
 
 // -----------------------------------------------------------------------------CREATE POPUP ARRAY
-const POPUP_PAGE = document.getElementById("mini-img")
+const POPUP_PAGE = document.querySelector(".popup__img")
 let storyArr = []
 let page = 0
 

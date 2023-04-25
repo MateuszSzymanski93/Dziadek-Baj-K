@@ -7,6 +7,59 @@ jQuery(function($)
     $('.navi__sliding-li--tom').click(function() { $.scrollTo($('.tales__img--tom'), 900); })
     $('.navi__sliding-li--balwan').click(function(){$.scrollTo($('.tales__img--balwan'), 1000); });
 });
+
+// -----------------------------------------------------------------------------OPEN POPUP 
+const SZAFA_MINI = document.querySelector(".tales__read--szafa");
+SZAFA_MINI.addEventListener("click", function()
+{
+    popupNewArr("szafa")
+});
+
+const TOM_MINI  = document.querySelector(".tales__read--tom");
+TOM_MINI.addEventListener("click", function()
+{
+    popupNewArr("Tom")
+});
+
+const BAŁWAN_MINI = document.querySelector(".tales__read--balwan");
+BAŁWAN_MINI.addEventListener("click", function()
+{
+    popupNewArr("Bałwan")
+});
+
+// -----------------------------------------------------------------------------CREATE POPUP ARRAY
+const POPUP_PAGE = document.getElementById("mini-img")
+let storyArr = []
+let page = 0
+
+function popupNewArr(name)
+{
+    let pageNumber = 0
+    let miniTitle = name;
+
+    if(miniTitle == "szafa")
+    {
+        numberOfPages = 8;
+    }
+    else if(miniTitle == "Tom")
+    {
+        numberOfPages = 7;
+    }
+    else if(miniTitle == "Bałwan")
+    {
+        numberOfPages = 11;
+    }    
+
+    for (pageNumber; pageNumber < numberOfPages; pageNumber++)
+    {
+        storyArr.push(`<img src=\"img/${name}/${name}mini${pageNumber}.jpg\">`)
+    }
+
+    POPUP.classList.remove("hidden");
+    POPUP_PAGE.innerHTML = storyArr[0];
+    return storyArr;
+}
+
 // -----------------------------------------------------------------------------CLOSE POPUP 
 const POPUP = document.querySelector(".popup");
 const POPUP_CLOSE = document.querySelector(".popup__close");
@@ -30,97 +83,67 @@ function closePopup()
         POPUP.classList.add("hidden");
         POPUP.classList.remove("fade-out")
     }, "700");
-}
-
-// -----------------------------------------------------------------------------OPEN POPUP 
-const SZAFA_MINI = document.querySelector(".tales__read--szafa");
-SZAFA_MINI.addEventListener("click", function()
-{
-    popupMini("szafa")
-
-});
-
-const TOM_MINI  = document.querySelector(".tales__read--tom");
-TOM_MINI.addEventListener("click", function()
-{
-    popupMini("Tom")
-});
-
-const BAŁWAN_MINI = document.querySelector(".tales__read--balwan");
-BAŁWAN_MINI.addEventListener("click", function()
-{
-    popupMini("Bałwan")
-
-});
-
-function popupMini(name)
-{
-    numer = 0;
-    POPUP.classList.remove("hidden");
-
-    let plik = `<img src=\"img/${name}/${name}mini${numer}.jpg\">`;
-    
-
-    document.getElementById("mini-img").innerHTML = plik;
-    
-    miniTitle = name;
-    if(miniTitle == "szafa")
-    {
-        numberOfPages = 8;
-    }
-    else if(miniTitle == "Tom")
-    {
-        numberOfPages = 7;
-    }
-    else if(miniTitle == "Bałwan")
-    {
-        numberOfPages = 11;
-    }    
+    page = 0
+    storyArr = []
+    return storyArr;
 }
 
 // -----------------------------------------------------------------------------NEXT PAGE
 const NEXT_MINI = document.querySelector(".popup__arrow--right");
 NEXT_MINI.addEventListener("click", function()
 {
-    next(miniTitle,numberOfPages);
+    next(storyArr);
 });
  
 const ARROW_RIGHT = document.addEventListener("keydown", (e) =>
 {
     if(e.code === "ArrowRight" || e.keyCode === 39)
-    next(miniTitle,numberOfPages);
+    next(storyArr);
 });
 
-function next(name, pages)
-{
-    
-    numer ++; if (numer > pages) numer =0;
+function next(storyArr)
+{ 
+    if(page < (storyArr.length -1))
+    {
+        page += 1
+    }
+    else
+    {
+        page = 0
+    }
+    POPUP_PAGE.innerHTML = storyArr[page]; 
+    /*numer ++; if (numer > pages) numer =0;
 
     let plik = `<img src=\"img/${name}/${name}mini${numer}.jpg\">`;
     
     document.getElementById("mini-img").innerHTML = plik;
+    */
 }
 
 // -----------------------------------------------------------------------------PREVIOUS PAGE
 const PREVIOUS_MINI = document.querySelector(".popup__arrow--left");
 PREVIOUS_MINI.addEventListener("click", function()
 {
-    previous(miniTitle, numberOfPages)
+    previous(storyArr)
 });
 
 const ARROW_LEFT = document.addEventListener("keydown", (e) =>
 {
     if(e.code === "ArrowLeft" || e.keyCode === 37)
-    previous(miniTitle,numberOfPages);
+    previous(storyArr)
 });
 
-function previous(name, pages)
+function previous(storyArr)
 {
-    numer --; if (numer<0) numer =pages;
-
-    let plik = `<img src=\"img/${name}/${name}mini${numer}.jpg\">`;
-
-    document.getElementById("mini-img").innerHTML = plik;
+    if(page > 0)
+    {
+        page -= 1
+    }
+    else
+    {
+        page = (storyArr.length -1)
+    }
+    POPUP_PAGE.innerHTML = storyArr[page];
 }
 
 // -----------------------------------------------------------------------------AUTHOR
@@ -205,3 +228,4 @@ addEventListener("touchend", (event) => {
         console.log("start touch Y position", Ystart);
         console.log("end touch Y position",Yend);
 */
+

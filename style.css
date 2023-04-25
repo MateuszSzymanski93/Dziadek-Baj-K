@@ -500,10 +500,9 @@ header
 
 .popup-img > img 
 {
-    animation: fadeIn 0.3s;
+    /*animation: fadeIn 0.6s;*/
     border: 3vw solid var(--red);
     height: auto;
-    image-rendering: smooth;
     width: 80vw;
 }
 

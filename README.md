@@ -2,14 +2,18 @@
 
 See website here https://mateuszszymanski93.github.io/Dziadek-Baj-K/
 
+
 Stories written by:
 
 -Arkadiusz "VLK" Szymański
 
+
 Graphics created by:
 
 -Arkadiusz "VLK" Szymański
+
 -Agata Hołyńska
+
 
 Document createted using:
 
@@ -28,9 +32,11 @@ Fonts uploaded from:
 
 -Google Fonts
 
+
 Unicode icons used in project uploaded from:
 
 https://symbl.cc/pl/
+
 
 
 Thanks for inspiration and knowledge used to create this project for:

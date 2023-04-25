@@ -4,7 +4,7 @@ See website here https://mateuszszymanski93.github.io/Dziadek-Baj-K/
 
 Stories written by:
 
--Arkadius "VLK" Szymański
+-Arkadiusz "VLK" Szymański
 
 Graphics created by:
 
